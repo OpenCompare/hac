@@ -8,5 +8,37 @@
     <artifactId>hac</artifactId>
     <version>1.0</version>
 
-    
+    <name>Hierarchical agglomerative clustering</name>
+    <description>
+        Hac is a simple library for hierarchical agglomerative clustering.
+        The goal of Hac is to be easy to use in any context that might require a hierarchical agglomerative clustering approach.
+    </description>
+    <url>http://sape.inf.usi.ch/hac</url>
+
+    <licenses>
+        <license>
+            <name>Simplified BSD License</name>
+            <url>http://www.opensource.org/licenses/bsd-license.php</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Matthias Hauswirth</name>
+            <email>Matthias.Hauswirth@usi.ch</email>
+            <organization>University of Lugano</organization>
+        </developer>
+
+        <developer>
+            <name>Guillaume Bécan</name>
+            <email>guillaume.becan@irisa.fr</email>
+            <organization>IRISA</organization>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git@github.com:gbecan/hac.git</connection>
+        <developerConnection>scm:git:git@github.com:gbecan/hac.git</developerConnection>
+        <url>git@github.com:gbecan/hac.git</url>
+    </scm>
 </project>
