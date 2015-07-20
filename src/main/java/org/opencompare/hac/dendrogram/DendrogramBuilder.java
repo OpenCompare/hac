@@ -8,9 +8,9 @@
  * See the COPYRIGHT file distributed with this work for information
  * regarding copyright ownership.
  */
-package ch.usi.inf.sape.hac.dendrogram;
+package org.opencompare.hac.dendrogram;
 
-import ch.usi.inf.sape.hac.ClusteringBuilder;
+import org.opencompare.hac.ClusteringBuilder;
 
 
 /**

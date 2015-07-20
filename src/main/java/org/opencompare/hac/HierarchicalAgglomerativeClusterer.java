@@ -8,11 +8,11 @@
  * See the COPYRIGHT file distributed with this work for information
  * regarding copyright ownership.
  */
-package ch.usi.inf.sape.hac;
+package org.opencompare.hac;
 
-import ch.usi.inf.sape.hac.agglomeration.AgglomerationMethod;
-import ch.usi.inf.sape.hac.experiment.DissimilarityMeasure;
-import ch.usi.inf.sape.hac.experiment.Experiment;
+import org.opencompare.hac.agglomeration.AgglomerationMethod;
+import org.opencompare.hac.experiment.DissimilarityMeasure;
+import org.opencompare.hac.experiment.Experiment;
 
 
 /**

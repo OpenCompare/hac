@@ -8,43 +8,39 @@
  * See the COPYRIGHT file distributed with this work for information
  * regarding copyright ownership.
  */
-package ch.usi.inf.sape.hac.agglomeration;
+package org.opencompare.hac.agglomeration;
 
 
 /**
- * The "average", "group average", "unweighted average", or 
- * "Unweighted Pair Group Method using Arithmetic averages (UPGMA)",
- * is a graph-based approach.
+ * The "weighted average", "McQuitty", or 
+ * "Weighted Pair-Group Method using Arithmetic averages, or WPGMA)" method.
  * 
- * The distance between two clusters is calculated as the average 
- * of the distances between all pairs of objects in opposite clusters.
- * This method tends to produce small clusters of outliers,
- * but does not deform the cluster space.
+ * Average linkage where the sizes of the clusters are assumed to be equal.
+ * This method, similar to "Median", weights small and large clusters equally. 
  * [The data analysis handbook. By Ildiko E. Frank, Roberto Todeschini]
  * 
  * The general form of the Lance-Williams matrix-update formula:
  * d[(i,j),k] = ai*d[i,k] + aj*d[j,k] + b*d[i,j] + g*|d[i,k]-d[j,k]|
  *
- * For the "group average" method:
- * ai = ci/(ci+cj)
- * aj = cj/(ci+cj)
+ * For the "McQuitty" method:
+ * ai = 0.5
+ * aj = 0.5
  * b  = 0
  * g  = 0
  * 
  * Thus:
- * d[(i,j),k] = ci/(ci+cj)*d[i,k] + cj/(ci+cj)*d[j,k]
- *            = ( ci*d[i,k] + cj*d[j,k] ) / (ci+cj)
+ * d[(i,j),k] = 0.5*d[i,k] + 0.5*d[j,k]
  * 
  * @author Matthias.Hauswirth@usi.ch
  */
-public final class AverageLinkage implements AgglomerationMethod {
+public final class WeightedAverageLinkage implements AgglomerationMethod {
 
     public double computeDissimilarity(final double dik, final double djk, final double dij, final int ci, final int cj, final int ck) {
-        return (ci*dik+cj*djk)/(ci+cj);
+        return 0.5*dik+0.5*djk;
     }
 
     public String toString() {
-        return "Average";
+        return "Weighted average";
     }
 
 }
