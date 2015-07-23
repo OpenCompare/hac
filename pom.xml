@@ -37,25 +37,41 @@
     </developers>
 
     <scm>
-        <connection>scm:git:git@github.com:gbecan/hac.git</connection>
-        <developerConnection>scm:git:git@github.com:gbecan/hac.git</developerConnection>
-        <url>git@github.com:gbecan/hac.git</url>
+        <connection>scm:git:git@github.com:OpenCompare/hac.git</connection>
+        <developerConnection>scm:git:git@github.com:OpenCompare/hac.git</developerConnection>
+        <url>git@github.com:OpenCompare/hac.git</url>
     </scm>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.3</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>false</autoReleaseAfterClose> <!-- false to manually inspect the staging repository -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <profiles>
         <profile>
             <id>release</id>
-
-            <distributionManagement>
-                <snapshotRepository>
-                    <id>ossrh</id>
-                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-                </snapshotRepository>
-                <repository>
-                    <id>ossrh</id>
-                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-                </repository>
-            </distributionManagement>
 
             <build>
                 <plugins>
